@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awasome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <title>Payoo Mobile | Transfer Money</title>
+</head>
+
+<body class="min-h-20 bg-[#F4F5F7]">
+    <!-- nav bar -->
+    <nav class="flex justify-between max-w-sm mx-auto bg-white items-center p-4 border-b-1 border-gray-500">
+        <div class="flex items-center gap-2">
+            <!-- logo -->
+            <img id="logo" src="assets/Group.png" class="w-[46px]" alt="">
+            <div>
+                <h3 class="font-bold">$45000</h3>
+                <p class="text-gray-500">Available Balance</p>
+            </div>
+        </div>
+        <!-- log out button -->
+        <button id="log-out" class="btn rounded-lg text-gray-700"> <i
+                class="fa-solid fa-right-from-bracket rotate-180 text-gray-900"></i>Log
+            Out</button>
+    </nav>
+    <!-- main class - consider as container -->
+    <main class="max-w-sm mx-auto">
+        <div class="p-4 bg-white">
+            <h1 class="font-bold text-xl">🔥 Welcome to Payooo! </h1>
+            <p class="text-gray-600">Enjoy easy and convenient financial services with us. Cashout charge is low and
+            </p>
+        </div>
+
+        <!-- card section -->
+        <div class="grid grid-cols-3 p-4 gap-4 bg-white rounded-b-[12px]">
+            <div id="add-money"
+                class="border-1  rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
+                <img class="h-[25px] mb-2" src="assets/wallet1.png" alt="">
+                <p >Add Money</p>
+            </div>
+            <div id="cash-out"
+                class="border-1 border-gray-500 rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
+                <img class="h-[25px] mb-2" src="assets/send1.png" alt="">
+                <p>Cash Out</p>
+            </div>
+            <div id="transfer-money"
+                class="border-1 rounded-[12px] border-gray-500  flex flex-col p-4 text-[12px] justify-center items-center">
+                <img class="h-[25px] mb-2" src="assets/money1.png" alt="">
+                <p >TransferMoney</p>
+            </div>
+            <div id="get-bonus"
+                class="border-1  border-[#0874F2] bg-[#0874F2]/5 rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
+                <img class="h-[25px] mb-2" src="assets/bonus1.png" alt="">
+                <p class="font-bold text-[#0874F2]">Get Bonus</p>
+            </div>
+            <div id="pay-bill"
+                class="border-1 border-gray-500 rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
+                <img class="h-[25px] mb-2" src="assets/purse1.png" alt="">
+                <p>Pay Bill</p>
+            </div>
+            <div id="transactions"
+                class="border-1 border-gray-500 rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
+                <img class="h-[25px] mb-2" src="assets/transaction1.png" alt="">
+                <p>Transactions</p>
+            </div>
+        </div>
+
+        <!-- get bonus section  -->
+        <h2 class="p-4 font-bold">Get Bonus</h2>
+
+        <form class="m-4 mt-0 p-4 pt-2 bg-white rounded-2xl">
+            
+            <label class="text-[#080808c5]" for="">Enter Bonus Coupon</label> <br>
+            <input id="phone-number" type="text" class="input my-2 rounded-4xl w-full bg-[#F4F5F7] border-none"
+                placeholder="enter your bonus coupon" />
+
+            <!-- if i don't write type it will take as submit button , 
+         thats why it will reload after click the button there hav another option to prevent it  -->
+            <button id="log-in" class="btn bg-[#0874F2] text-white w-full rounded-4xl mt-2">Get Bonus <button>
+        </form>
+    </main>
+    <script src="js/payoo.js"></script>
+</body>
+
+</html>

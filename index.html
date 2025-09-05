@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Payoo Mobile</title>
+</head>
+
+<body class="h-[100vh] flex  flex-col justify-center items-center bg-[#F4F5F7]">
+
+    <div class="w-[316px] h-[135px] bg-[url(assets/bg.png)] bg-no-repeat bg-cover flex justify-center items-center">
+        <img src="assets/Group.png" alt="">
+    </div>
+    <form class="w-sm bg-white h-[300px] p-8 rounded-3xl ">
+
+        <label class="mb-4 font-semibold" for="">Mobile Number</label> <br>
+        <input id="phone-number" type="text" class="input my-4 rounded-4xl w-full bg-[#F4F5F7] border-none"
+            placeholder="Enter your number" />
+        <br>
+
+        <label class="mb-4 font-semibold" for="">4 Digit Pin</label> <br>
+        <input id="pin-number" type="text" class="input my-4 rounded-4xl bg-[#F4F5F7] w-full border-none"
+            placeholder="Enter 4 digit pin" />
+
+        <!-- if i don't write type it will take as submit button , 
+         thats why it will reload after click the button there hav another option to prevent it  -->
+        <button id="log-in" class="btn bg-[#0874F2] text-white w-full rounded-4xl">Login</button>
+
+    </form>
+
+    <script>
+        // login button events
+        const loginBtn = document.getElementById('log-in');
+        const phoneNumber = "17123456789";
+        const pinNumber = "1234";
+
+        if (loginBtn) {
+            loginBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const getNumber = document.getElementById('phone-number').value;
+                const getPin = document.getElementById('pin-number').value;
+
+                const convertedNumber = parseInt(getNumber);
+                const convertedPin = parseInt(getPin);
+
+                if (convertedNumber === phoneNumber && convertedPin === pinNumber) {
+                    window.location.href = "home.html";
+                }
+                else {
+                    alert("invalid number or pin")
+                }
+
+            })
+        }
+    </script>
+</body>
+
+</html>
