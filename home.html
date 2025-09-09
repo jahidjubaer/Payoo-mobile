@@ -67,9 +67,11 @@
         </div>
 
         <!-- transactions section -->
-        <div id="last-transactions" class="form flex justify-between p-4">
+        <div id="last-transactions" class="form">
+        <div class=" flex justify-between p-4">
             <h2 class="font-bold">Last Transactions</h2>
             <p class="text-gray-500">View All</p>
+        </div>
         </div>
 
         <!-- add money section -->
@@ -199,9 +201,25 @@
         </div>
 
         <!-- transactions section -->
-        <div id="transactions-section" class="form flex justify-between p-4">
-            <h2 class=" font-bold">Transactions History</h2>
-            <p class="text-gray-500">View All</p>
+        <div  id="transactions-section" class="form">
+            <div class=" flex justify-between items-center p-4">
+                <h2 class=" font-bold">Transactions History</h2>
+                <p class="text-gray-500">View All</p>
+            </div>
+            <!-- transaction details -->
+            <div id="transaction-container">
+                <div class="flex justify-between items-center p-3 bg-white rounded-xl mb-4">
+                    <div class="flex gap-3">
+                        <div class=" rounded-full w-[45px] h-[45px] flex justify-center items-center bg-[#F4F5F7]"><img src="assets/wallet1.png" alt=""></div>
+                        <div>
+                            <h1 class="font-bold text-[#080808]/70">Electricity Bill</h1>
+                            <p class="text-[#080808]/70 text-sm">Today 01:44 AM</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+        
         </div>
         
     </main>
