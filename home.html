@@ -10,20 +10,18 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- font awasome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-    <title>Payoo Mobile | Home</title>
+    <title>Payoo Mobile | Add Money</title>
 </head>
 
-<body class="min-h-20 bg-[#F4F5F7]">
-    <nav class="flex justify-between max-w-sm mx-auto bg-white items-center p-4 border-b-1 border-gray-400">
+<body class="min-h-[100vh] bg-[#F4F5F7]">
+    <nav class="flex justify-between max-w-sm mx-auto bg-white items-center p-4 border-b-1 border-gray-500">
         <div class="flex items-center gap-2">
-            <!-- logo -->
             <img id="logo" src="assets/Group.png" class="w-[46px]" alt="">
             <div>
-                <h3 class="font-bold">$45000</h3>
+                <h3 class="font-bold">$ <span id="total-cash">45000</span></h3>
                 <p class="text-gray-500">Available Balance</p>
             </div>
         </div>
-        <!-- log out button -->
         <button id="log-out" class="btn rounded-lg text-gray-700"> <i
                 class="fa-solid fa-right-from-bracket rotate-180 text-gray-900"></i>Log
             Out</button>
@@ -37,44 +35,178 @@
 
         <div class="grid grid-cols-3 p-4 gap-4 bg-white rounded-b-[12px]">
             <div id="add-money"
-                class="border-1 border-gray-500  rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
+                class="cards border-1 border-gray-500 rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
                 <img class="h-[25px] mb-2" src="assets/wallet1.png" alt="">
-                <p>Add Money</p>
+                <p >Add Money</p>
             </div>
             <div id="cash-out"
-                class="border-1 border-gray-500 rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
+                class="cards border-1 border-gray-500 rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
                 <img class="h-[25px] mb-2" src="assets/send1.png" alt="">
                 <p>Cash Out</p>
             </div>
             <div id="transfer-money"
-                class="border-1 rounded-[12px] border-gray-500  flex flex-col p-4 text-[12px] justify-center items-center">
+                class="cards border-1 border-gray-500 rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
                 <img class="h-[25px] mb-2" src="assets/money1.png" alt="">
                 <p>TransferMoney</p>
             </div>
             <div id="get-bonus"
-                class="border-1 border-gray-500 rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
+                class="cards border-1 border-gray-500 rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
                 <img class="h-[25px] mb-2" src="assets/bonus1.png" alt="">
                 <p>Get Bonus</p>
             </div>
             <div id="pay-bill"
-                class="border-1 border-gray-500 rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
+                class="cards border-1 border-gray-500 rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
                 <img class="h-[25px] mb-2" src="assets/purse1.png" alt="">
                 <p>Pay Bill</p>
             </div>
             <div id="transactions"
-                class="border-1 border-gray-500 rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
+                class="cards border-1 border-gray-500 rounded-[12px]  flex flex-col p-4 text-[12px] justify-center items-center">
                 <img class="h-[25px] mb-2" src="assets/transaction1.png" alt="">
                 <p>Transactions</p>
             </div>
         </div>
 
-        <div class="flex justify-between p-4">
-            <h2 class=" font-bold">Latest Payment</h2>
+        <!-- transactions section -->
+        <div id="last-transactions" class="form flex justify-between p-4">
+            <h2 class="font-bold">Last Transactions</h2>
             <p class="text-gray-500">View All</p>
         </div>
 
+        <!-- add money section -->
+        <div  id="add-money-section" class="form"  >
+            <h2 class="p-4 font-bold">Add Money</h2>
+
+        <form class="mt-0 p-4 pt-2 bg-white rounded-2xl">
+            <label class="text-[#080808c5]" for="">Select A Bank</label>
+            <select id="add-bank" class="select my-2 rounded-4xl w-full text-[#080808] bg-[#F4F5F7] border-none">
+                <option disabled selected>Select bank</option>
+                <option>NRBC Bank</option>
+                <option>SUNALI Bank</option>
+                <option>Dutch Bangla Bank</option>
+            </select>
+
+            <label class="text-[#080808c5]" for="">Bank Account Number</label> <br>
+            <input id="add-bank-account" type="text" class="input my-2 rounded-4xl w-full bg-[#F4F5F7] border-none"
+                placeholder="Enter 11 digit account number" />
+
+            <label class="text-[#080808c5]" for="">Amount to Add</label> <br>
+            <input id="add-cash" type="text" class="input my-2 rounded-4xl w-full bg-[#F4F5F7] border-none"
+                placeholder="add amount to withdraw" />
+
+            <label class="text-[#080808c5]" for="">Pin Number</label> <br>
+            <input id="add-pin" type="text" class="input my-2 rounded-4xl w-full bg-[#F4F5F7] border-none"
+                placeholder="Enter 4 digit pin number" />
+
+            <!-- if i don't write type it will take as submit button , 
+         thats why it will reload after click the button there hav another option to prevent it  -->
+            <button id="add-btn" class="btn bg-[#0874F2] text-white w-full rounded-4xl mt-2">Add Money <button>
+        </form>
+        </div>
+
+        <!-- cash out section -->
+        <div id="cash-out-section" class="form" >
+            <h2 class="p-4 font-bold">Cash Out</h2>
+
+        <form class="mt-0 p-4 pt-2 bg-white rounded-2xl">
+            
+            <label class="text-[#080808c5]" for="">Agent Number</label> <br>
+            <input id="cash-out-account" type="text" class="input my-2 rounded-4xl w-full bg-[#F4F5F7] border-none"
+                placeholder="Enter 11 digit agent number" />
+
+            <label class="text-[#080808c5]" for="">Amount</label> <br>
+            <input id="cash-out-amount" type="text" class="input my-2 rounded-4xl w-full bg-[#F4F5F7] border-none"
+                placeholder="add amount to withdraw" />
+
+            <label class="text-[#080808c5]" for="">Pin Number</label> <br>
+            <input id="cash-out-pin" type="text" class="input my-2 rounded-4xl w-full bg-[#F4F5F7] border-none"
+                placeholder="Enter 4 digit pin number" />
+
+            <!-- if i don't write type it will take as submit button , 
+         thats why it will reload after click the button there hav another option to prevent it  -->
+            <button id="cash-out-btn" class="btn bg-[#0874F2] text-white w-full rounded-4xl mt-2">Cash Out<button>
+        </form>
+        </div>
+
+        <!-- transferMoney section -->
+        <div id="transfer-money-section" class="form">
+             <h2 class="p-4 font-bold">Transfer Money</h2>
+
+        <form class="mt-0 p-4 pt-2 bg-white rounded-2xl">
+
+            <label class="text-[#080808c5]" for="">User Number</label> <br>
+            <input id="phone-number" type="text" class="input my-2 rounded-4xl w-full bg-[#F4F5F7] border-none"
+                placeholder="Enter 11 digit User number" />
+
+            <label class="text-[#080808c5]" for="">Amount</label> <br>
+            <input id="phone-number" type="text" class="input my-2 rounded-4xl w-full bg-[#F4F5F7] border-none"
+                placeholder="enter amount to transfer" />
+
+            <label class="text-[#080808c5]" for="">Pin Number</label> <br>
+            <input id="phone-number" type="text" class="input my-2 rounded-4xl w-full bg-[#F4F5F7] border-none"
+                placeholder="Enter 4 digit pin number" />
+
+            <!-- if i don't write type it will take as submit button , 
+         thats why it will reload after click the button there hav another option to prevent it  -->
+            <button id="log-in" class="btn bg-[#0874F2] text-white w-full rounded-4xl mt-2">Add Money <button>
+        </form>
+        </div>
+
+        <!-- get bonus section -->
+        <div id="get-bonus-section" class="form">
+            <h2 class="p-4 font-bold">Get Bonus</h2>
+
+              <form class=" mt-0 p-4 pt-2 bg-white rounded-2xl">
+            
+            <label class="text-[#080808c5]" for="">Enter Bonus Coupon</label> <br>
+            <input id="phone-number" type="text" class="input my-2 rounded-4xl w-full bg-[#F4F5F7] border-none"
+                placeholder="enter your bonus coupon" />
+
+            <!-- if i don't write type it will take as submit button , 
+         thats why it will reload after click the button there hav another option to prevent it  -->
+            <button id="log-in" class="btn bg-[#0874F2] text-white w-full rounded-4xl mt-2">Get Bonus <button>
+            </form>
+        </div>
+
+        <!-- pay bill section -->
+        <div id="pay-bill-section" class="form">
+            <h2 class="p-4 font-bold">Pay Bill</h2>
+
+            <form class=" mt-0 p-4 pt-2 bg-white rounded-2xl">
+            <label class="text-[#080808c5]" for="">Select to Pay</label>
+            <select class="select my-2 rounded-4xl w-full text-[#080808] bg-[#F4F5F7] border-none">
+                <option disabled selected>Select bill type</option>
+                <option>Gas Bill</option>
+                <option>Electricity Bill</option>
+                <option>Water Bill</option>
+            </select>
+
+            <label class="text-[#080808c5]" for="">Biller Account Number</label> <br>
+            <input id="phone-number" type="text" class="input my-2 rounded-4xl w-full bg-[#F4F5F7] border-none"
+                placeholder="enter account number" />
+
+            <label class="text-[#080808c5]" for="">Amount to Pay</label> <br>
+            <input id="phone-number" type="text" class="input my-2 rounded-4xl w-full bg-[#F4F5F7] border-none"
+                placeholder="add amount to pay" />
+
+            <label class="text-[#080808c5]" for="">Pin Number</label> <br>
+            <input id="phone-number" type="text" class="input my-2 rounded-4xl w-full bg-[#F4F5F7] border-none"
+                placeholder="Enter 4 digit pin number" />
+
+            <!-- if i don't write type it will take as submit button , 
+         thats why it will reload after click the button there hav another option to prevent it  -->
+            <button id="log-in" class="btn bg-[#0874F2] text-white w-full rounded-4xl mt-2">Add Money <button>
+        </form>
+        </div>
+
+        <!-- transactions section -->
+        <div id="transactions-section" class="form flex justify-between p-4">
+            <h2 class=" font-bold">Transactions History</h2>
+            <p class="text-gray-500">View All</p>
+        </div>
+        
     </main>
-    <script src="js/payoo.js"></script>
+
+    <script src="js/home.js"></script>
 </body>
 
 </html>

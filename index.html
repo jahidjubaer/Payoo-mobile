@@ -33,32 +33,7 @@
 
     </form>
 
-    <script>
-        // login button events
-        const loginBtn = document.getElementById('log-in');
-        const phoneNumber = "17123456789";
-        const pinNumber = "1234";
-
-        if (loginBtn) {
-            loginBtn.addEventListener('click', function (event) {
-                event.preventDefault();
-
-                const getNumber = document.getElementById('phone-number').value;
-                const getPin = document.getElementById('pin-number').value;
-
-                const convertedNumber = parseInt(getNumber);
-                const convertedPin = parseInt(getPin);
-
-                if (convertedNumber === phoneNumber && convertedPin === pinNumber) {
-                    window.location.href = "home.html";
-                }
-                else {
-                    alert("invalid number or pin")
-                }
-
-            })
-        }
-    </script>
+    <script src="js/payoo.js"></script>
 </body>
 
 </html>
